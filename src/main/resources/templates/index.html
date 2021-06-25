@@ -31,7 +31,8 @@
     </div>
 
     <div sec:authorize="isAuthenticated()" class="alert alert-primary" role="alert">
-      This section is only visible only to authenticated users.
+      This section is only visible only to authenticated users. <br>
+      Principal: [[${#authentication.principal}]]
     </div>
 
     <div th:if="${secretMessage}" class="alert alert-primary" role="alert">
