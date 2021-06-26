@@ -8,14 +8,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-public class IndexController {
+public class MainController {
     
     @RequestMapping(value = "/ping", method = RequestMethod.GET)
     public String ping() {
         return "ping";
     }
     
-
+//    @RequestMapping(value = "/upload", method = RequestMethod.POST)
+    
+    
     @GetMapping
     public String getIndexPage(Model model, Authentication authentication) {
         if (authentication != null && authentication.isAuthenticated()) {

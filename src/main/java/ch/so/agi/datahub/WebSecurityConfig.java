@@ -26,9 +26,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+        //@formatter:off  
         http
             .authorizeRequests()
                 .mvcMatchers("/ping")
+                .permitAll()
+                .and()
+            .authorizeRequests()
+                .mvcMatchers("/")
                 .permitAll()
                 .and()
             .authorizeRequests()
@@ -36,5 +41,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authenticated()
                 .and()
             .oauth2Login();
+        //@formatter:on  
     }
 }
